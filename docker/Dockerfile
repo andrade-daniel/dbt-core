@@ -54,6 +54,12 @@ VOLUME /usr/app
 ENTRYPOINT ["dbt"]
 
 ##
+# DANIEL
+##
+FROM base as dbt-bigquery-daniel
+RUN python -m pip install --no-cache-dir "git+https://github.com/dbt-labs/dbt-bigquery.git"
+
+##
 # dbt-core
 ##
 FROM base as dbt-core
